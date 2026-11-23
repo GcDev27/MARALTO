@@ -4,6 +4,8 @@ Site de um restaurante fictício de frutos do mar em Fortaleza, refeito do zero 
 
 O restaurante, o Mestre Elias e os preços são inventados.
 
+**No ar:** https://maralto-ce.vercel.app
+
 ## Visual
 
 - **Logo:** é a mesma da versão original, feita por mim. Apenas tirei o fundo do arquivo e gerei duas versões, uma em azul-marinho e outra em marfim, sem redesenhar nada.
