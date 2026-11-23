@@ -1,0 +1,202 @@
+.historia {
+  background: var(--noite);
+  color: rgb(246 246 243 / 0.88);
+}
+
+.historia h2,
+.historia h3 {
+  color: var(--perola);
+}
+
+.historia-palco {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(5rem, 11vw, 9rem);
+}
+
+.historia-grade {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 3rem;
+}
+
+.historia-cabeca {
+  display: grid;
+  gap: 2rem;
+  align-content: start;
+}
+
+.historia-cabeca .filete {
+  margin-bottom: -0.5rem;
+}
+
+.historia-foto {
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: saturate(0.85);
+}
+
+.historia-trilho {
+  display: grid;
+  gap: 2.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marco {
+  max-width: 36ch;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--latao);
+}
+
+.marco-ano {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-3);
+  line-height: 1.1;
+  color: var(--latao-claro);
+}
+
+.marco-titulo {
+  margin-top: 0.35rem;
+}
+
+.marco-texto {
+  margin-top: 0.75rem;
+}
+
+.historia-timao {
+  position: absolute;
+  right: -4rem;
+  bottom: -2rem;
+  width: 24rem;
+  height: auto;
+  opacity: 0.07;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+}
+
+/* A rota só aparece quando a seção anima; sem animação, os anos já estão no texto. */
+.rota {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .historia-trilho {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .historia-timao {
+    right: -6rem;
+    bottom: -3rem;
+    width: 40rem;
+  }
+}
+
+/* Estado ligado pelo GSAP no desktop, com movimento liberado. */
+.em-cena {
+  min-height: calc(100vh - var(--cabecalho));
+  display: grid;
+  align-content: center;
+  padding-block: 3rem;
+}
+
+.em-cena .historia-grade {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.em-cena .historia-foto {
+  max-width: 26rem;
+  max-height: 32vh;
+}
+
+.em-cena .historia-trilho {
+  grid-template-columns: 1fr;
+}
+
+.em-cena .marco {
+  grid-area: 1 / 1;
+  max-width: 30ch;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.em-cena .marco-ano {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  white-space: nowrap;
+}
+
+.em-cena .marco-titulo {
+  font-size: var(--t-3);
+}
+
+.em-cena .rota {
+  position: relative;
+  display: block;
+  max-width: 26rem;
+}
+
+.rota::before,
+.rota-linha {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.45rem;
+  height: 1px;
+  background: rgb(246 246 243 / 0.25);
+}
+
+.rota-linha {
+  background: var(--latao-claro);
+  transform-origin: left center;
+}
+
+.rota-pontos {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rota-ponto {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  font-size: var(--t-0);
+  color: rgb(246 246 243 / 0.6);
+}
+
+.rota-ponto::before {
+  content: '';
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid var(--latao-claro);
+  border-radius: 50%;
+  background: var(--noite);
+}
+
+.rota-ponto:first-child {
+  justify-items: start;
+}
+
+.rota-ponto:last-child {
+  justify-items: end;
+}
+
+.rota-ponto.atual {
+  color: var(--perola);
+}
+
+.rota-ponto.atual::before {
+  background: var(--latao-claro);
+}

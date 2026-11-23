@@ -1,0 +1,130 @@
+.reserva-grade {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.reserva-info {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+}
+
+.reserva-info dt {
+  font-size: var(--t-0);
+  letter-spacing: 0.02em;
+  color: var(--latao-texto);
+}
+
+.reserva-info dd {
+  margin: 0.15rem 0 0;
+}
+
+.reserva-caixa {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--linha);
+  background: #fff;
+}
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-dupla {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-size: var(--t-0);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--marinho);
+}
+
+.campo-dica {
+  font-size: var(--t-0);
+  color: var(--texto-suave);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #9aa3ad;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo select:disabled {
+  background: var(--perola);
+  color: var(--texto-suave);
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible,
+.campo textarea:focus-visible {
+  border-color: var(--marinho);
+  outline-offset: 0;
+}
+
+.campo-erro input,
+.campo-erro select {
+  border-color: #a3322b;
+}
+
+.campo-mensagem {
+  font-size: var(--t-0);
+  font-weight: 500;
+  color: #a3322b;
+}
+
+.form-enviar {
+  justify-self: start;
+  margin-top: 0.5rem;
+}
+
+.reserva-feita {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+}
+
+.reserva-feita h3 {
+  font-size: var(--t-4);
+}
+
+.reserva-feita h3:focus {
+  outline: none;
+}
+
+.reserva-aviso {
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--latao);
+  color: var(--texto-suave);
+}
+
+@media (min-width: 600px) {
+  .form-dupla {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .reserva-grade {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 6rem;
+    align-items: start;
+  }
+}

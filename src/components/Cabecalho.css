@@ -1,0 +1,116 @@
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(246 246 243 / 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linha);
+}
+
+.cabecalho-barra {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  min-height: var(--cabecalho);
+}
+
+.cabecalho-marca {
+  display: block;
+  margin-right: auto;
+}
+
+.cabecalho-marca img {
+  width: auto;
+  height: 3rem;
+}
+
+.cabecalho-nav ul {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabecalho-nav a {
+  font-size: var(--t-0);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--marinho);
+}
+
+.cabecalho-nav a:hover {
+  text-decoration: underline;
+}
+
+.cabecalho-reservar {
+  min-height: 2.6rem;
+  padding: 0.5rem 1.25rem;
+  font-size: var(--t-0);
+}
+
+.cabecalho-menu {
+  display: none;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--marinho);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--marinho);
+  font-size: var(--t-0);
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.menu-celular {
+  overflow: hidden;
+  border-top: 1px solid var(--linha);
+}
+
+.menu-celular ul {
+  margin-block: 0;
+  padding: 0.75rem 0 1.25rem;
+  list-style: none;
+}
+
+.menu-celular a {
+  display: block;
+  padding-block: 0.7rem;
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-3);
+  line-height: 1.2;
+  color: var(--marinho);
+  text-decoration: none;
+}
+
+@media (max-width: 899px) {
+  .cabecalho-nav {
+    display: none;
+  }
+
+  .cabecalho-barra {
+    gap: 0.75rem;
+  }
+
+  .cabecalho-menu {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .menu-celular {
+    display: none;
+  }
+}
+
+/* No celular, a reserva fica dentro do menu e logo no topo da página. */
+@media (max-width: 599px) {
+  .cabecalho-reservar {
+    display: none;
+  }
+
+  .cabecalho-marca img {
+    height: 2.2rem;
+  }
+}

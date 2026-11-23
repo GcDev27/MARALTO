@@ -1,0 +1,220 @@
+@import '@fontsource/libre-caslon-display/latin-400.css';
+@import '@fontsource-variable/hanken-grotesk/index.css';
+
+/*
+  A paleta sai da logo: o azul-marinho do traço, um branco-pérola frio
+  e um latão usado só em filetes e detalhes pequenos.
+*/
+:root {
+  --perola: #f6f6f3;
+  --perola-escura: #ebebe6;
+  --marinho: #053362;
+  --noite: #0a1a2f;
+  --latao: #a8875a;
+  --latao-claro: #cdb48a;
+  /* latão escurecido para texto pequeno: contraste AA sobre os fundos claros */
+  --latao-texto: #7d6238;
+
+  --texto: #1d2a3a;
+  --texto-suave: #55606d;
+  --linha: rgb(5 51 98 / 0.16);
+
+  --fonte-titulo: 'Libre Caslon Display', 'Didot', Georgia, serif;
+  --fonte-texto: 'Hanken Grotesk Variable', system-ui, sans-serif;
+
+  /* escala 4:3 a partir de 17px */
+  --t-0: 0.9375rem;
+  --t-1: 1.0625rem;
+  --t-2: 1.4rem;
+  --t-3: 1.875rem;
+  --t-4: 2.5rem;
+  --t-5: clamp(2.5rem, 5.5vw, 4rem);
+
+  --margem: clamp(1.25rem, 5vw, 4rem);
+  --largura: 74rem;
+  --cabecalho: 4.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(var(--cabecalho) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--perola);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: var(--t-1);
+  font-weight: 400;
+  line-height: 1.6;
+  font-variant-numeric: lining-nums tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--marinho);
+}
+
+h2 {
+  font-size: var(--t-5);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--t-2);
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--latao);
+  outline-offset: 3px;
+}
+
+.conteiner {
+  width: min(100% - 2 * var(--margem), var(--largura));
+  margin-inline: auto;
+}
+
+.secao {
+  padding-block: clamp(5rem, 11vw, 9rem);
+}
+
+.secao-titulo {
+  max-width: 16ch;
+}
+
+.secao-intro {
+  margin-top: 1.25rem;
+  max-width: 50ch;
+  color: var(--texto-suave);
+}
+
+/* Filete de latão: o único ornamento da página. */
+.filete {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  margin-bottom: 1.5rem;
+  background: var(--latao);
+}
+
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--marinho);
+  color: var(--perola);
+}
+
+.pular:focus {
+  top: 1rem;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid var(--marinho);
+  border-radius: 2px;
+  background: var(--marinho);
+  color: var(--perola);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.botao:hover {
+  background: var(--noite);
+  border-color: var(--noite);
+}
+
+.botao-vazado {
+  background: transparent;
+  color: var(--marinho);
+}
+
+.botao-vazado:hover {
+  background: var(--marinho);
+  color: var(--perola);
+}
+
+/* Versões para fundo escuro */
+.botao-claro {
+  border-color: var(--perola);
+  background: var(--perola);
+  color: var(--noite);
+}
+
+.botao-claro:hover {
+  background: transparent;
+  border-color: var(--perola);
+  color: var(--perola);
+}
+
+.botao-claro-vazado {
+  border-color: rgb(246 246 243 / 0.7);
+  background: transparent;
+  color: var(--perola);
+}
+
+.botao-claro-vazado:hover {
+  background: var(--perola);
+  border-color: var(--perola);
+  color: var(--noite);
+}
+
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

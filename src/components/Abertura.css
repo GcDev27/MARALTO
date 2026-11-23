@@ -1,0 +1,70 @@
+.abertura {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: max(34rem, calc(100svh - var(--cabecalho)));
+  overflow: hidden;
+  background: var(--noite);
+  color: var(--perola);
+}
+
+.abertura-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+/* Escurece a foto o bastante para a logo e o texto terem contraste. */
+.abertura-veu {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgb(10 26 47 / 0.55), rgb(10 26 47 / 0.35) 45%, rgb(10 26 47 / 0.8)),
+    rgb(10 26 47 / 0.15);
+}
+
+.abertura-conteudo {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 1.75rem;
+  padding-block: 4rem 2rem;
+  text-align: center;
+}
+
+.abertura-titulo {
+  width: min(78vw, 30rem);
+}
+
+.abertura-logo {
+  width: 100%;
+  height: auto;
+}
+
+.abertura-frase {
+  max-width: 30ch;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.abertura-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.abertura-horario {
+  position: relative;
+  padding-block: 1.25rem;
+  border-top: 1px solid rgb(246 246 243 / 0.25);
+  font-size: var(--t-0);
+  color: rgb(246 246 243 / 0.85);
+}
